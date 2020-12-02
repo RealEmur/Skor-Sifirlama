@@ -4,7 +4,9 @@
 ConVar roundsayisi = null;
 public void OnPluginStart()
 {
+	CreateDirectory("cfg/PluginMerkezi", 3);
 	roundsayisi = CreateConVar("sm_sifirlama_roundsayisi", "200", "Kaç roundda bir skor sıfırlansın?");
+	AutoExecConfig(true, "skorsifirlayici", "PluginMerkezi");
 	
 	HookEvent("round_end", event_end);
 }
